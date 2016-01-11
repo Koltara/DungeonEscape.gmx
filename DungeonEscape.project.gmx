@@ -5,9 +5,17 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprite>sprites\sWall</sprite>
+    <sprite>sprites\sDoor</sprite>
+    <sprite>sprites\sStair</sprite>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <objects name="objects">
+    <object>objects\oNode</object>
+    <object>objects\oGrid</object>
+  </objects>
   <help>
     <rtf>help.rtf</rtf>
   </help>
