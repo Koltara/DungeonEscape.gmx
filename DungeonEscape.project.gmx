@@ -9,13 +9,28 @@
     <sprite>sprites\sWall</sprite>
     <sprite>sprites\sDoor</sprite>
     <sprite>sprites\sStair</sprite>
+    <sprite>sprites\sPlayer</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\moveToClick.gml</script>
+    <script>scripts\playerCreateEvent.gml</script>
+    <script>scripts\playerStepEvent.gml</script>
+  </scripts>
   <objects name="objects">
-    <object>objects\oNode</object>
-    <object>objects\oGrid</object>
+    <object>objects\oPlayer</object>
+    <object>objects\oWall</object>
+    <object>objects\oEvent</object>
+    <object>objects\oDungeonWall</object>
+    <object>objects\oDoor</object>
+    <object>objects\oStair</object>
+    <object>objects\oOpenDoor</object>
+    <object>objects\oClosedDoor</object>
   </objects>
+  <rooms name="rooms">
+    <room>rooms\rm_BaseDungeon</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
