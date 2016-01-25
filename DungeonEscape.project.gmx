@@ -10,6 +10,11 @@
     <sprite>sprites\sDoor</sprite>
     <sprite>sprites\sStair</sprite>
     <sprite>sprites\sPlayer</sprite>
+    <sprite>sprites\sPlayerInvulnerable</sprite>
+    <sprite>sprites\sDoorKey</sprite>
+    <sprite>sprites\sOpenedDoor</sprite>
+    <sprite>sprites\sEnemy</sprite>
+    <sprite>sprites\sGUI</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -17,19 +22,50 @@
     <script>scripts\moveToClick.gml</script>
     <script>scripts\playerCreateEvent.gml</script>
     <script>scripts\playerStepEvent.gml</script>
+    <scripts name="Collision Detection">
+      <script>scripts\setCollisionBounds.gml</script>
+      <script>scripts\isCollisionDoor.gml</script>
+      <script>scripts\isCollisionEvent.gml</script>
+      <script>scripts\isCollisionEnemy.gml</script>
+      <script>scripts\approximatelyZero.gml</script>
+      <script>scripts\isCollisionRectangle.gml</script>
+      <script>scripts\calculateCollisionBounds.gml</script>
+    </scripts>
+    <script>scripts\closedDoorStepEvent.gml</script>
+    <script>scripts\enemyCreateEvent.gml</script>
+    <script>scripts\enemyStepEvent.gml</script>
+    <script>scripts\playerDrawEvent.gml</script>
+    <script>scripts\generateHitBox.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\oPlayer</object>
-    <object>objects\oWall</object>
-    <object>objects\oEvent</object>
-    <object>objects\oDungeonWall</object>
-    <object>objects\oDoor</object>
-    <object>objects\oStair</object>
-    <object>objects\oOpenDoor</object>
-    <object>objects\oClosedDoor</object>
+    <objects name="Moving Objects">
+      <object>objects\oBasicEnemy</object>
+      <object>objects\oPlayer</object>
+      <objects name="Base Objects">
+        <object>objects\oEnemy</object>
+      </objects>
+    </objects>
+    <objects name="Pickups">
+      <object>objects\oKey</object>
+    </objects>
+    <objects name="Dungeon Elements">
+      <object>objects\oStair</object>
+      <object>objects\oDungeonWall</object>
+      <object>objects\oOpenDoor</object>
+      <object>objects\oClosedDoor</object>
+      <objects name="Base Objects">
+        <object>objects\oDoor</object>
+        <object>objects\oWall</object>
+        <object>objects\oEvent</object>
+      </objects>
+    </objects>
+    <objects name="Combat Objects">
+      <object>objects\oHitBox</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_BaseDungeon</room>
+    <room>rooms\rm_Floor1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

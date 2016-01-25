@@ -1,11 +1,11 @@
-    grid = mp_grid_create(0,0,room_width/16,room_height/16,16,16);
+    grid = mp_grid_create(0,0,room_width/8,room_height/8,8,8);
     path = path_add();
     mp_grid_add_instances(path,oWall,true);
     
-    if numberOfKeys > 0
+    if oPlayer.numberOfKeys > 0
     {
-        //
-    }   else mp_grid_add_instances(path,oClosedDoor,true); 
+
+    } else mp_grid_add_instances(path,oClosedDoor,true);
            
     mp_grid_path(grid,path,x,y,StopX,StopY,true);
     path_start(path,max_speed,"",true);
