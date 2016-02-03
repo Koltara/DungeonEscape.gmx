@@ -11,12 +11,22 @@
     <sprite>sprites\sStair</sprite>
     <sprite>sprites\sPlayer</sprite>
     <sprite>sprites\sPlayerInvulnerable</sprite>
+    <sprite>sprites\sPlayerRunning</sprite>
+    <sprite>sprites\sEnemy</sprite>
+    <sprite>sprites\sPlayerRunningInvulnerable</sprite>
     <sprite>sprites\sDoorKey</sprite>
     <sprite>sprites\sOpenedDoor</sprite>
-    <sprite>sprites\sEnemy</sprite>
     <sprite>sprites\sGUI</sprite>
+    <sprite>sprites\sHitBox</sprite>
+    <sprite>sprites\sTutorialButton</sprite>
+    <sprite>sprites\sStartButton</sprite>
+    <sprite>sprites\sReturnButton</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bck_tileset</background>
+    <background>background\bck_TitleScreen</background>
+    <background>background\bck_Tutorial</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\moveToClick.gml</script>
@@ -26,6 +36,7 @@
       <script>scripts\setCollisionBounds.gml</script>
       <script>scripts\isCollisionDoor.gml</script>
       <script>scripts\isCollisionEvent.gml</script>
+      <script>scripts\isCollisionWall.gml</script>
       <script>scripts\isCollisionEnemy.gml</script>
       <script>scripts\approximatelyZero.gml</script>
       <script>scripts\isCollisionRectangle.gml</script>
@@ -36,6 +47,10 @@
     <script>scripts\enemyStepEvent.gml</script>
     <script>scripts\playerDrawEvent.gml</script>
     <script>scripts\generateHitBox.gml</script>
+    <script>scripts\hitBoxCreateEvent.gml</script>
+    <script>scripts\hitBoxStepEvent.gml</script>
+    <script>scripts\getPathDirection.gml</script>
+    <script>scripts\knockBackObject.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Moving Objects">
@@ -62,9 +77,14 @@
     <objects name="Combat Objects">
       <object>objects\oHitBox</object>
     </objects>
+    <object>objects\oStartButton</object>
+    <object>objects\oTutorialButton</object>
+    <object>objects\oReturnButton</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_TitleScreen</room>
     <room>rooms\rm_BaseDungeon</room>
+    <room>rooms\rm_Tutorial</room>
     <room>rooms\rm_Floor1</room>
   </rooms>
   <help>

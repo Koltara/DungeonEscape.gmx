@@ -1,4 +1,28 @@
 //f
+
+if keyboard_check_released(ord('R'))
+    game_restart()
+attackButton = keyboard_check_released(ord('X'));
+
+if playerHealth <= 0
+    game_restart()
+
+if can_attack and attackButton
+{
+    generateHitBox(x,y, direction, 8)
+    can_attack = false
+}
+
+if !can_attack
+{
+    swing_count--
+}
+if swing_count <= 0
+{
+    can_attack = true
+    swing_count = swing_speed
+}
+
 if mouse_check_button_released(mb_left)
 {
     StopX = mouse_x
@@ -12,6 +36,9 @@ else
     invulnerable = false
     count = invulnerableTimer
 }
+if x != StopX or y != StopY
+    playerState = RUNNING
+else playerState = NORMAL
 
 
 if isCollisionEnemy()
@@ -42,11 +69,10 @@ if isCollisionEvent()
     }
 }
 
-playerState = NORMAL
-
 switch playerState
 {
-    case NORMAL: 
+
+    case NORMAL:  
         if invulnerable
         {
             sprite_index = sPlayerInvulnerable
@@ -54,5 +80,10 @@ switch playerState
         break
     case ATTACKING:
         break
+    case RUNNING:
+        sprite_index = sPlayerRunning
+        break
 }
+image_speed = 1
+image_angle = direction
 moveToClick()

@@ -14,3 +14,5 @@ StopX = x
 StopY = y
 originalX = x
 originalY = y
+
+setCollisionBounds(-4, 4, 4, -4)

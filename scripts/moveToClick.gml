@@ -27,3 +27,14 @@
         StopX = x;
         StopY = y;
     }
+    if path_get_length(path) > 128
+       {
+        x = xprevious;
+        y = yprevious;
+        path_end();
+        StopX = x;
+        StopY = y;
+       }
+    if path_get_length(path) > 0
+        direction = getPathDirection(path, 0, 2)
+    
