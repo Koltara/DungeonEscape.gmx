@@ -18,6 +18,7 @@
     <sprite>sprites\sOpenedDoor</sprite>
     <sprite>sprites\sGUI</sprite>
     <sprite>sprites\sHitBox</sprite>
+    <sprite>sprites\sPlayerSpinning</sprite>
     <sprite>sprites\sTutorialButton</sprite>
     <sprite>sprites\sStartButton</sprite>
     <sprite>sprites\sReturnButton</sprite>

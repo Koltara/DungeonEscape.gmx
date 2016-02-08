@@ -10,35 +10,48 @@ inst.enemyHealth -= damage
     
     
     
-    if knockbackTargetX > xPrev
-        for (inst.x=inst.x; inst.x < knockbackTargetX; inst.x+= 1)
+    if targetX > xPrev
+        for (inst.x=inst.x; inst.x < targetX; inst.x++)
         {
             with (inst)
+            {
                 if isCollisionWall()
-                    break
+                {
+                break
+                break
+                }
+            }
 
         }
-    if knockbackTargetX < xPrev
-        for (inst.x=inst.x; inst.x > knockbackTargetX; inst.x-= 1)
+    if targetX < xPrev
+        for (inst.x=inst.x; inst.x > targetX; inst.x-= 1)
         {
            with (inst)
                 if isCollisionWall()
-                    break
-
+                   {
+                break
+                break
+                }
         }
-    if knockbackTargetY > yPrev
-        for (inst.y=inst.y; inst.y < knockbackTargetY; inst.y+= 1)
+    if targetY > yPrev
+        for (inst.y=inst.y; inst.y < targetY; inst.y+= 1)
         {
             with (inst)
                 if isCollisionWall()
-                    break
+                    {
+                break
+                break
+                }
 
         }
-    if knockbackTargetY < yPrev
-        for (inst.y=inst.y; inst.y > knockbackTargetY; inst.y-= 1)
+    if targetY < yPrev
+        for (inst.y=inst.y; inst.y > targetY; inst.y-= 1)
         {
             with (inst)
                 if isCollisionWall()
-                    break
+                    {
+                break
+                break
+                }
 
         }

@@ -15,6 +15,7 @@ y = 32
 NORMAL = 0
 ATTACKING = 1
 RUNNING = 2
+SPINNING = 3
 
 
 //

@@ -1,4 +1,6 @@
 //f
+if room = rm_TitleScreen
+    instance_destroy()
 
 if keyboard_check_released(ord('R'))
     game_restart()
@@ -10,6 +12,7 @@ if playerHealth <= 0
 if can_attack and attackButton
 {
     generateHitBox(x,y, direction, 8)
+    playerState = SPINNING
     can_attack = false
 }
 
@@ -36,9 +39,10 @@ else
     invulnerable = false
     count = invulnerableTimer
 }
-if x != StopX or y != StopY
+if (x != StopX or y != StopY) and playerState != SPINNING
     playerState = RUNNING
-else playerState = NORMAL
+else if playerState != SPINNING
+    playerState = NORMAL
 
 
 if isCollisionEnemy()
@@ -73,6 +77,8 @@ switch playerState
 {
 
     case NORMAL:  
+    
+        image_speed = 1
         if invulnerable
         {
             sprite_index = sPlayerInvulnerable
@@ -83,7 +89,12 @@ switch playerState
     case RUNNING:
         sprite_index = sPlayerRunning
         break
+    case SPINNING:
+        sprite_index = sPlayerSpinning
+        image_speed = 2
+        if image_index > 5
+            playerState = NORMAL
 }
-image_speed = 1
+
 image_angle = direction
 moveToClick()
